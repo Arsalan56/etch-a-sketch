@@ -1,0 +1,23 @@
+.cont {
+    margin: 0px;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    border: 5px solid black;
+}
+
+.container {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.sketch {
+    width: 100vh;
+}
+
+.active {
+    background: black;
+}
