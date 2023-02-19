@@ -1,5 +1,12 @@
 const cont = document.querySelector('.cont');
-function fillBox(pixels) {
+
+function EraseBox() {
+    let box = document.querySelector('.cont');
+    let child = document.querySelectorAll('.cont > div');
+    child.forEach(sketch => {box.removeChild(sketch)});
+
+}
+function FillBox(pixels) {
     for (let i = 0; i < pixels; i++) {
         let container = document.createElement('div');
         container.classList.toggle('container');
@@ -10,8 +17,17 @@ function fillBox(pixels) {
             container.appendChild(sketch);
         }
     }
+    let sketch = document.querySelectorAll('.sketch');
+    sketch.forEach(box => box.addEventListener('mouseover', () => box.classList.add('active')));
 }
-fillBox(16)
+FillBox(16)
 
-let sketch = document.querySelectorAll('.sketch');
-sketch.forEach(box => box.addEventListener('mouseover', () => box.classList.add('active')));
+
+let change = document.querySelector('.change');
+change.addEventListener('click', function() {
+    let input = prompt('Change Pixels (1-100):');
+    if (input > 0 && input <= 100) {
+        EraseBox();
+        FillBox(input);
+    }
+})
