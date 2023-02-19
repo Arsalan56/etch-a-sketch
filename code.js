@@ -25,9 +25,15 @@ FillBox(16)
 
 let change = document.querySelector('.change');
 change.addEventListener('click', function() {
-    let input = prompt('Change Pixels (1-100):');
+    let input = prompt('Change Grid (1-100):');
     if (input > 0 && input <= 100) {
         EraseBox();
         FillBox(input);
     }
+})
+
+let restart = document.querySelector('.restart');
+restart.addEventListener('click', function() {
+    let sketch = document.querySelectorAll('.active');
+    sketch.forEach(act => act.classList.remove('active'));
 })
